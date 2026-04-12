@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+}
+
+@utility des {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+* {
+  font-family: var(--font-manrope);
+}
+
+body {
+  background-color: #fafafa;
+  color: black;
+  overflow-x: hidden;
+}
+
+.container {
+  margin-inline: auto;
+
+  @media (max-width: 767px) {
+    padding-inline: 15px;
+  }
+}
+
+.btn {
+  padding: 23px 30px;
+  border: none;
+  border-radius: 0;
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.link {
+  text-decoration: none;
+  background-image: linear-gradient(to right, #d87d4a, #d87d4a 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:before {
+    content: "";
+    background: #d87d4a;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.active {
+    background-position: 0;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    background-position: 0;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
