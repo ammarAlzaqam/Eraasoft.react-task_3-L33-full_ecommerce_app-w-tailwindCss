@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import logoImg from "../assets/footer-logo.png";
+import links from "../constants/navLinks";
 
 export default function Footer() {
   let linkStyle =
@@ -9,7 +11,7 @@ export default function Footer() {
     "after:content-[''] after:absolute after:top-0 after:left-[50%] after:md:left-0 after:translate-x-[-50%] after:md:translate-x-0 after:w-25.25 after:h-1 after:bg-[#D87D4A]";
 
   return (
-    <footer data-aos="fade-in" className="mt-50 bg-[#101010]">
+    <footer data-aos="fade-in" className="mt-30 lg:mt-40 bg-[#101010]">
       <div className="relative container pt-18.75 pb-12">
         {/*//! Top footer details */}
         <div
@@ -20,18 +22,15 @@ export default function Footer() {
             <img className="w-35.75" src={logoImg} alt="footer-logo" />
             {/* Links */}
             <nav className="flex flex-col md:flex-row items-center gap-8.5">
-              <a href="#page" className={linkStyle}>
-                Home
-              </a>
-              <a href="#page" className={linkStyle}>
-                Headphones
-              </a>
-              <a href="#page" className={linkStyle}>
-                Speakers
-              </a>
-              <a href="#page" className={linkStyle}>
-                Earphones
-              </a>
+              {links.map(({ route, name }) => (
+                <Link
+                  to={route}
+                  onClick={() => scrollTo(0, 0)}
+                  className={linkStyle}
+                >
+                  {name}
+                </Link>
+              ))}
             </nav>
           </div>
           {/*//! bottom des & media */}

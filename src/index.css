@@ -14,6 +14,7 @@
 
 * {
   font-family: var(--font-manrope);
+  scroll-behavior: smooth;
 }
 
 body {

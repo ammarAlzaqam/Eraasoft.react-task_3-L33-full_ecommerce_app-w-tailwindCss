@@ -3,7 +3,7 @@ import popularProducts from "../constants/categories";
 export default function ShowCategories({ className }) {
   return (
     <div
-      className={`flex flex-col md:flex-row gap-17 md:gap-2.5 lg:gap-7.5 pt-50 ${className}`}
+      className={`container flex flex-col md:flex-row gap-17 md:gap-2.5 lg:gap-7.5 pt-50 ${className}`}
     >
       {popularProducts.map((p, i) => (
         <CategoryBox i={i} product={p} key={p.name} />

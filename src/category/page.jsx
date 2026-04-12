@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import products from "../constants/products";
 import HeroSec from "../shared/heroSec";
-import ProductCart from "../shared/ProductCart";
+import ProductCard from "../shared/ProductCard";
 import Bring from "../shared/Bring";
 import ShowCategories from "../shared/ShowCategories";
 
@@ -17,7 +17,7 @@ export default function Category() {
       <HeroSec productCategory={category} />
 
       {filteredProducts.map((p, i) => (
-        <ProductCart key={p.slug} product={p} i={i} />
+        <ProductCard key={p.slug} product={p} i={i} />
       ))}
 
       <ShowCategories className="lg:pt-60" />

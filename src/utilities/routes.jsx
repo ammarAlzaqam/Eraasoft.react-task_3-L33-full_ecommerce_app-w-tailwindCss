@@ -1,6 +1,7 @@
 import Category from "../category/page";
 import Home from "../home/page";
 import Layout from "../layout/layout";
+import ProductDetails from "../product-details/page";
 
 export const routes = [
   {
@@ -14,6 +15,10 @@ export const routes = [
       {
         path: "category/:category",
         element: <Category />,
+      },
+      {
+        path: "product-details/:slug",
+        element: <ProductDetails />,
       },
     ],
   },

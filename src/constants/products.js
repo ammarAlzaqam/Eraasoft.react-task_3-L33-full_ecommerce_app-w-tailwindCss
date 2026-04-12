@@ -30,10 +30,11 @@ import earphone0rdImg from "../assets/categories/earphones/3.png";
 
 const products = [
   {
+    new: true,
     slug: "xx99-mark-ii",
     category: "headphones",
     mainImg: headphone1MainImg,
-    images: [headphone1stImg, headphone1ndImg, headphone1rdImg],
+    gallery: [headphone1stImg, headphone1ndImg, headphone1rdImg],
     name: "XX99 Mark II",
     des: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     price: "2,999",
@@ -74,15 +75,16 @@ const products = [
       },
       {
         img: speaker1MainImg,
-        name: "ZX9 SPEAKER",
+        name: "ZX9",
       },
     ],
   },
   {
+    new: false,
     slug: "xx99-mark-i",
     category: "headphones",
     mainImg: headphone2MainImg,
-    images: [headphone2stImg, headphone2ndImg, headphone2rdImg],
+    gallery: [headphone2stImg, headphone2ndImg, headphone2rdImg],
     name: "XX99 Mark I",
     des: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     price: "1,750",
@@ -119,15 +121,16 @@ const products = [
       },
       {
         img: speaker1MainImg,
-        name: "ZX9 SPEAKER",
+        name: "ZX9",
       },
     ],
   },
   {
+    new: false,
     slug: "xx59",
     category: "headphones",
     mainImg: headphone3MainImg,
-    images: [headphone3stImg, headphone3ndImg, headphone3rdImg],
+    gallery: [headphone3stImg, headphone3ndImg, headphone3rdImg],
     name: "XX59",
     des: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     price: "899",
@@ -164,15 +167,16 @@ const products = [
       },
       {
         img: speaker1MainImg,
-        name: "ZX9 SPEAKER",
+        name: "ZX9",
       },
     ],
   },
   {
+    new: true,
     slug: "zx9",
     category: "speakers",
     mainImg: speaker1MainImg,
-    images: [speaker1stImg, speaker1ndImg, speaker1rdImg],
+    gallery: [speaker1stImg, speaker1ndImg, speaker1rdImg],
     name: "ZX9",
     des: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     price: "4,500",
@@ -205,7 +209,7 @@ const products = [
     suggestedProducts: [
       {
         img: speaker2MainImg,
-        name: "ZX7 SPEAKER",
+        name: "ZX7",
       },
       {
         img: headphone2MainImg,
@@ -218,10 +222,11 @@ const products = [
     ],
   },
   {
+    new: false,
     slug: "zx7",
     category: "speakers",
     mainImg: speaker2MainImg,
-    images: [speaker2stImg, speaker2ndImg, speaker2rdImg],
+    gallery: [speaker2stImg, speaker2ndImg, speaker2rdImg],
     name: "ZX7",
     des: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
     price: "3,500",
@@ -254,7 +259,7 @@ const products = [
     suggestedProducts: [
       {
         img: speaker1MainImg,
-        name: "ZX9 SPEAKER",
+        name: "ZX9",
       },
       {
         img: headphone2MainImg,
@@ -267,10 +272,11 @@ const products = [
     ],
   },
   {
+    new: true,
     slug: "yx1-wireless",
     category: "earphones",
     mainImg: earphone0MainImg,
-    images: [earphone0stImg, earphone0ndImg, earphone0rdImg],
+    gallery: [earphone0stImg, earphone0ndImg, earphone0rdImg],
     name: "YX1 WIRELESS",
     des: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     price: "599",
@@ -311,7 +317,7 @@ const products = [
       },
       {
         img: speaker1MainImg,
-        name: "ZX9 SPEAKER",
+        name: "ZX9",
       },
     ],
   },
