@@ -2,7 +2,7 @@ export default function Features({ features, inTheBox }) {
   return (
     <div className="container mt-40 flex flex-col lg:flex-row gap-22 md:gap-31.25">
       {/*//! Left features */}
-      <div className="lg:w-[60%] flex flex-col gap-8">
+      <div data-aos="fade-right" className="lg:w-[60%] flex flex-col gap-8">
         <h2 className="text-[32px] font-bold leading-9 tracking-[1.14px] uppercase">
           Features
         </h2>
@@ -11,7 +11,10 @@ export default function Features({ features, inTheBox }) {
         ))}
       </div>
       {/*//! Right In the box */}
-      <div className="flex flex-col md:flex-row lg:flex-col gap-6 md:gap-3 lg:gap-8 shrink-0">
+      <div
+        data-aos="fade-left"
+        className="flex flex-col md:flex-row lg:flex-col gap-6 md:gap-3 lg:gap-8 shrink-0"
+      >
         <h2 className="w-auto md:w-[50%] lg:w-auto text-[32px] font-bold leading-9 tracking-[1.14px] uppercase">
           In the box
         </h2>

@@ -59,7 +59,9 @@ const Product1Card = () => {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <button className="btn bg-black">See Product</button>
+        <Link to="/product-details/zx9" className="btn bg-black">
+          See Product
+        </Link>
       </div>
     </div>
   );
@@ -83,9 +85,12 @@ const Product2Card = () => {
         <h3 className="text-[28px] font-bold leading-[100%] tracking-[2px] uppercase">
           Zx7 Speaker
         </h3>
-        <button className="btn bg-transparent transition! duration-300 text-black hover:bg-black hover:text-white border!">
+        <Link
+          to="/product-details/zx7"
+          className="btn bg-transparent transition! duration-300 text-black hover:bg-black hover:text-white border!"
+        >
           See Product
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -94,6 +99,7 @@ const Product2Card = () => {
 import earphonesYX1 from "../../assets/products/single-products/earphones.png";
 import PopularProducts from "../../shared/ShowCategories";
 import popularProducts from "../../constants/categories";
+import { Link } from "react-router-dom";
 const Product3Card = () => {
   return (
     <div className="flex flex-col md:flex-row gap-6 md:gap-2.75 lg:gap-7.5">
@@ -112,9 +118,12 @@ const Product3Card = () => {
         <h3 className="text-[28px] font-bold leading-[100%] tracking-[2px] uppercase">
           YX1 Earphones
         </h3>
-        <button className="btn bg-transparent transition! duration-300 text-black hover:bg-black hover:text-white border!">
+        <Link
+          to="/product-details/yx1-wireless"
+          className="btn bg-transparent transition! duration-300 text-black hover:bg-black hover:text-white border!"
+        >
           See Product
-        </button>
+        </Link>
       </div>
     </div>
   );
