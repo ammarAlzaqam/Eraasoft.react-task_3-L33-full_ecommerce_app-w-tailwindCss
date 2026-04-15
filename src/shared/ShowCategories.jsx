@@ -19,9 +19,10 @@ const CategoryBox = ({ product, i }) => {
   return (
     <Link
       to={`/category/${product.name}`}
+      onClick={() => scrollTo(0, 0)}
       data-aos="fade-down"
       data-aos-delay={200 * i}
-      className="group flex flex-col items-center gap-9 flex-1 bg-[#F1F1F1] pb-7.5"
+      className="group flex flex-col items-center justify-between gap-9 flex-1 bg-[#F1F1F1] pb-7.5"
     >
       {/*//? Img wrapper (shadow img) */}
       <div className="relative -mt-13.75 lg:-mt-20">
@@ -52,7 +53,7 @@ const CategoryBox = ({ product, i }) => {
             <path
               d="M0.707031 0.707153L5.70703 5.70715L0.707031 10.7072"
               stroke="#D87D4A"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         </div>

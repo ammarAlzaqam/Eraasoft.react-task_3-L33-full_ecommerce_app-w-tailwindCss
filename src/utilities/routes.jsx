@@ -1,4 +1,5 @@
 import Category from "../category/page";
+import Checkout from "../checkout/page";
 import Home from "../home/page";
 import Layout from "../layout/layout";
 import ProductDetails from "../product-details/page";
@@ -19,6 +20,10 @@ export const routes = [
       {
         path: "product-details/:slug",
         element: <ProductDetails />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },

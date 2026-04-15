@@ -2,8 +2,27 @@ import clsx from "clsx";
 import { BiPlus } from "react-icons/bi";
 import { BsDash } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import useCart from "../utilities/zustand/useCart";
+import { useEffect, useRef } from "react";
 
 export default function ({ product, i = 0, type = "multi" }) {
+  const addToCart = useCart((state) => state.addToCart);
+  const increment = useCart((state) => state.increment);
+  const decrement = useCart((state) => state.decrement);
+  const cart = useCart((state) => state.cart);
+
+  const cartProduct = cart.find((c) => c.slug === product.slug);
+
+  const count = cartProduct?.count || 0;
+
+  const prevCountRef = useRef(count);
+
+  const isIncrease = count > prevCountRef.current;
+
+  useEffect(() => {
+    prevCountRef.current = count;
+  }, [count]);
+
   return (
     <div
       className={clsx(
@@ -49,21 +68,53 @@ export default function ({ product, i = 0, type = "multi" }) {
         {type === "single" ? (
           <>
             <p className="mb-12 font-bold text-[18px] leading-[100%] tracking-[1.29px] uppercase">
-              $ {product.price}
+              $ {product.price.toLocaleString()}
             </p>
             <div className="flex gap-4">
-              <div className="btn bg-[#F1F1F1] text-black flex items-center gap-5 cursor-auto">
-                <BsDash className="text-[16px] text-black/25 cursor-pointer" />
-                1
-                <BiPlus className="text-[16px] text-black/25 cursor-pointer" />
+              <div className="w-30 bg-[#F1F1F1] text-black flex items-center justify-center gap-5 cursor-auto">
+                <BsDash
+                  onClick={() => decrement(product.slug)}
+                  className={clsx(
+                    count
+                      ? "cursor-pointer transition duration-300 hover:text-red-500 hover:scale-125"
+                      : "cursor-not-allowed",
+                    "text-[16px] text-black/25",
+                  )}
+                />
+                <span
+                  key={count}
+                  className={clsx(
+                    isIncrease
+                      ? "animate-pop-up-green"
+                      : "animate-pop-down-red",
+                    "font-bold text-[13px] tracking-[1px] inline-block select-none",
+                  )}
+                >
+                  {count}
+                </span>
+                <BiPlus
+                  onClick={() => increment(product.slug)}
+                  className={clsx(
+                    count
+                      ? "cursor-pointer transition duration-300 hover:text-green-500 hover:scale-125"
+                      : "cursor-not-allowed",
+                    "text-[16px] text-black/25",
+                  )}
+                />
               </div>
-              <button className="btn bg-[#D87D4A]">Add To Cart</button>
+              <button
+                className="btn bg-[#D87D4A]"
+                onClick={() => addToCart(product)}
+              >
+                Add To Cart
+              </button>
             </div>
           </>
         ) : (
           <Link
             to={`/product-details/${product.slug}`}
             className="btn bg-[#D87D4A]"
+            onClick={() => scrollTo(0, 0)}
           >
             See Product
           </Link>

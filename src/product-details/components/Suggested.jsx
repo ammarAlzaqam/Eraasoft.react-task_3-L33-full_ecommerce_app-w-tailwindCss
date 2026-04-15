@@ -39,6 +39,7 @@ export default function Suggested({ suggestedProducts }) {
                 data-aos="fade-up"
                 to={`/product-details/${slug}`}
                 className="btn bg-[#D87D4A]"
+                onClick={() => scrollTo(0, 0)}
               >
                 See Product
               </Link>

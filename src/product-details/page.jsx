@@ -1,21 +1,22 @@
 import { useParams } from "react-router-dom";
-import products from "../constants/products";
-import GoBack from "./components/GoBack";
 import ProductCard from "../shared/ProductCard";
 import Features from "./components/Features";
-import Gallery from "./components/gallery";
+import Gallery from "./components/Gallery";
 import Suggested from "./components/suggested";
 import ShowCategories from "../shared/ShowCategories";
 import Bring from "../shared/Bring";
+import useProducts from "../utilities/zustand/useProducts";
+import GoBack from "../shared/GoBack";
 
 export default function ProductDetails() {
   const { slug } = useParams();
+  const products = useProducts((state) => state.products);
 
   const product = products.find((p) => p.slug === slug);
-  console.log(product);
+
   return (
     <section className="flex flex-col">
-      <GoBack category={product.category} />
+      <GoBack />
       <ProductCard product={product} type="single" />
       <Features features={product.features} inTheBox={product.inTheBox} />
       <Gallery gallery={product.gallery} />

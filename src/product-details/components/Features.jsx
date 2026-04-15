@@ -7,7 +7,9 @@ export default function Features({ features, inTheBox }) {
           Features
         </h2>
         {features.map((f) => (
-          <p className="text-[15px] text-black/50 leading-6.25">{f}</p>
+          <p key={f} className="text-[15px] text-black/50 leading-6.25">
+            {f}
+          </p>
         ))}
       </div>
       {/*//! Right In the box */}
@@ -20,7 +22,7 @@ export default function Features({ features, inTheBox }) {
         </h2>
         <ul className="flex flex-col gap-2">
           {inTheBox.map((e) => (
-            <li className="flex items-center gap-6">
+            <li key={e.name} className="flex items-center gap-6">
               <p className="text-[15px] text-[#D87D4A] font-bold leading-6.25">
                 {e.count}x
               </p>

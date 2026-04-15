@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`relative ${pathname === "/" ? "bg-[#131313]" : "bg-black"} pt-8 z-50`}
+        className={`sticky top-0 ${pathname === "/" ? "bg-[#131313]" : "bg-black"} pt-8 z-50`}
       >
         <div
           data-aos="fade-down"
