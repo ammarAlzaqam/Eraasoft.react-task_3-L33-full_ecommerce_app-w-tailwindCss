@@ -401,6 +401,8 @@ const Receipt = ({ finalPrice, shipping, vat, grandtotal }) => {
 const CheckoutModal = ({ cart, grandtotal }) => {
   const [viewAll, setViewAll] = useState(false);
 
+  const navigate = useNavigate();
+
   const clearCart = useCart((state) => state.clearCart);
   const addOrder = useOrders((state) => state.addOrder);
 
@@ -483,8 +485,9 @@ const CheckoutModal = ({ cart, grandtotal }) => {
         </div>
         <button
           onClick={() => {
-            clearCart();
             addOrder(cart);
+            navigate("/", { replace: true });
+            clearCart();
             scrollTo(0, 0);
           }}
           className="mt-6 md:mt-11.5 btn bg-[#D87D4A]"

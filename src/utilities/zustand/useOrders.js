@@ -39,12 +39,14 @@ const useOrders = create(
 
       removeOrder: (id) =>
         set((state) => ({
-          orders: state.orders.filter((order) => order.id !== id),
+          orders: state.orders.filter(
+            (order) => !(order.id === id && order.state === "pending"),
+          ),
         })),
 
-      clearOrders: () =>
-        set(() => ({
-          orders: [],
+      clearPendingOrders: () =>
+        set((state) => ({
+          orders: state.orders.filter((order) => order.state !== "pending"),
         })),
     }),
     {

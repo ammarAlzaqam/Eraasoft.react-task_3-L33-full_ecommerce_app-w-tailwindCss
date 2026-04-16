@@ -53,7 +53,10 @@ export default function CartModal({ openCart, setOpenCart }) {
               </h3>
               <p
                 onClick={() => clearCart()}
-                className="text-black/50 text-[15px] leading-6.25 underline cursor-pointer transition hover:text-red-800 hover:scale-y-120"
+                className={clsx(
+                  cart?.length > 0 && "hover:text-red-800 hover:scale-x-110",
+                  "text-black/50 text-[15px] leading-6.25 underline cursor-pointer transition duration-300",
+                )}
               >
                 Remove all
               </p>

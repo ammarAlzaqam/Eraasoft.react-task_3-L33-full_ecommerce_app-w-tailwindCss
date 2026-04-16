@@ -2,6 +2,7 @@ import Category from "../category/page";
 import Checkout from "../checkout/page";
 import Home from "../home/page";
 import Layout from "../layout/layout";
+import OrdersPage from "../orders/page";
 import ProductDetails from "../product-details/page";
 
 export const routes = [
@@ -24,6 +25,10 @@ export const routes = [
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/orders",
+        element: <OrdersPage />,
       },
     ],
   },

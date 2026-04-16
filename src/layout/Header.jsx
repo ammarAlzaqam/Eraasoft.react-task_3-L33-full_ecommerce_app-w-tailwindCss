@@ -5,10 +5,13 @@ import { Link, useLocation } from "react-router-dom";
 import links from "../constants/navLinks";
 import CartModal from "./CartModal";
 import { useState } from "react";
+import useCart from "../utilities/zustand/useCart";
+import { FiShoppingCart } from "react-icons/fi";
 
 export default function Header() {
   const location = useLocation();
   const pathname = location.pathname;
+  const cart = useCart((state) => state.cart);
 
   const [openCart, setOpenCart] = useState(false);
 
@@ -38,10 +41,20 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <BsCart3
-            onClick={() => setOpenCart((prev) => !prev)}
-            className="text-white text-[20px] md:absolute md:top-1 md:right-0 lg:static cursor-pointer transition duration-300 hover:text-[#D87D4A]"
-          />
+          <div className="relative">
+            <FiShoppingCart
+              onClick={() => setOpenCart((prev) => !prev)}
+              className="text-white text-[24px] md:absolute md:top-1 md:right-0 lg:static cursor-pointer transition duration-300 hover:text-[#D87D4A]"
+            />
+
+            {cart.length > 0 && (
+              <div className="absolute -top-2 -right-3 w-5 h-5 rounded-full bg-[#D87D4A] flex items-center justify-center pointer-events-none">
+                <span className="text-white text-sm animate">
+                  {cart.length}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </header>
       <CartModal openCart={openCart} setOpenCart={setOpenCart} />
