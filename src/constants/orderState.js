@@ -16,22 +16,25 @@ export const statusColors = {
     border: "border-yellow-500/50",
     badge: "bg-yellow-500/20",
     text: "text-yellow-500",
+    statusColor: "status-warning",
   },
-  shipped: {
+  delivered: {
     bg: "bg-green-500/5",
     bgHover: "hover:bg-green-500/5",
     bg2: "bg-green-500/15",
     border: "border-green-500/20",
     badge: "bg-green-500/20",
     text: "text-green-600",
+    statusColor: "status-success",
   },
-  delivered: {
+  shipped: {
     bg: "bg-blue-500/5",
     bgHover: "hover:bg-blue-500/5",
     bg2: "bg-blue-500/15",
     border: "border-blue-500/20",
     badge: "bg-blue-500/20",
     text: "text-blue-600",
+    statusColor: "status-primary",
   },
 };
 

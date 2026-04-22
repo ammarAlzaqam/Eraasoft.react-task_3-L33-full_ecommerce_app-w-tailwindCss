@@ -37,6 +37,13 @@ const useOrders = create(
           };
         }),
 
+      updateOrderState: (id, newState) =>
+        set((state) => ({
+          orders: state.orders.map((order) =>
+            order.id === id ? { ...order, state: newState } : order,
+          ),
+        })),
+
       removeOrder: (id) =>
         set((state) => ({
           orders: state.orders.filter(

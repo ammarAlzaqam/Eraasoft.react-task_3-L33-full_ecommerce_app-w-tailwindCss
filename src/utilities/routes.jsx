@@ -1,5 +1,6 @@
 import Category from "../category/page";
 import Checkout from "../checkout/page";
+import DashboardPage from "../dashboard/page";
 import Home from "../home/page";
 import Layout from "../layout/layout";
 import OrdersPage from "../orders/page";
@@ -31,5 +32,9 @@ export const routes = [
         element: <OrdersPage />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardPage />,
   },
 ];

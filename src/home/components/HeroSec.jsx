@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero.png";
 
 export default function HeroSec() {
@@ -19,7 +20,12 @@ export default function HeroSec() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="btn mt-4 bg-[#d87d4a]">See Product</button>
+          <Link
+            to="/product-details/xx99-mark-ii"
+            className="btn mt-4 bg-[#d87d4a]"
+          >
+            See Product
+          </Link>
         </div>
         {/*//! Right Image */}
         <img

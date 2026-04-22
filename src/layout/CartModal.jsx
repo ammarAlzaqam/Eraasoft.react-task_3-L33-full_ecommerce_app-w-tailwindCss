@@ -31,7 +31,7 @@ export default function CartModal({ openCart, setOpenCart }) {
         openCart
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none",
-        "fixed z-40 top-0 left-0 w-full h-dvh bg-black/40 transition duration-300 overflow-auto pb-8",
+        "fixed z-300 top-0 left-0 w-full h-dvh bg-black/40 transition duration-300 overflow-auto pb-8",
       )}
     >
       <div className="container flex justify-end pt-30">
