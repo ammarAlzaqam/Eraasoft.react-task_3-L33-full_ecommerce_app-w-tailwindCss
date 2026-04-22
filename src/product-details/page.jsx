@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import ProductCard from "../shared/ProductCard";
 import Features from "./components/Features";
 import Gallery from "./components/Gallery";
-import Suggested from "./components/suggested";
+import Suggested from "./components/Suggested";
 import ShowCategories from "../shared/ShowCategories";
 import Bring from "../shared/Bring";
 import useProducts from "../utilities/zustand/useProducts";
