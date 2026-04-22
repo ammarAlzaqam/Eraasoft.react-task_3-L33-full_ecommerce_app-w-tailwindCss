@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import HeroSec from "../shared/heroSec";
+import HeroSec from "../shared/HeroSec";
 import ProductCard from "../shared/ProductCard";
 import Bring from "../shared/Bring";
 import ShowCategories from "../shared/ShowCategories";
